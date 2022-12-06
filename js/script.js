@@ -34,7 +34,7 @@ const objList = [];
 
 const divCarousel = document.querySelector("div.carousel-image")
 
-let current;
+let current = 0;
 
 for (let i=0; i < images.length; i++){
     
@@ -50,22 +50,42 @@ for (let i=0; i < images.length; i++){
     divElement.append(img);
     divCarousel.appendChild(divElement)
     objList.push(divElement)
-
-    current = objList[i]
     
-    console.log(current);
 }
 
 console.log(objList);
 
-current.classList.add("active")
+objList[current].classList.add("active")
 
-const previousButton = document.querySelector("previous");
+const previousButton = document.querySelector(".previous");
 
-const nextButton = document.querySelector("next")
+const nextButton = document.querySelector(".next")
 
 
-// previousButton.addEventListener("click", function(){
+previousButton.addEventListener("click", function(){
 
-    
-// })
+    objList[current].classList.remove("active")
+
+    current++
+
+    if(current > objList.length - 1){
+        current = 0;
+    }
+
+    objList[current].classList.add("active")
+});
+
+
+nextButton.addEventListener("click", function(){
+
+    objList[current].classList.remove("active")
+
+    current--
+
+    if(current < 0){
+        current = objList.length - 1;
+    }
+
+    objList[current].classList.add("active")
+
+});
