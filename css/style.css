@@ -52,7 +52,7 @@ div.next{
     display:none;
 }
 
-div.my-carousel-item.active {
+.my-carousel-item.active {
     display:block;
 }
 

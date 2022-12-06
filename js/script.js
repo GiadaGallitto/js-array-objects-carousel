@@ -30,9 +30,11 @@ const images = [
     }
 ];
 
+const objList = [];
 
-// divImage.appendChild(carousel)
 const divCarousel = document.querySelector("div.carousel-image")
+
+let current;
 
 for (let i=0; i < images.length; i++){
     
@@ -47,5 +49,23 @@ for (let i=0; i < images.length; i++){
 
     divElement.append(img);
     divCarousel.appendChild(divElement)
+    objList.push(divElement)
 
+    current = objList[i]
+    
+    console.log(current);
 }
+
+console.log(objList);
+
+current.classList.add("active")
+
+const previousButton = document.querySelector("previous");
+
+const nextButton = document.querySelector("next")
+
+
+// previousButton.addEventListener("click", function(){
+
+    
+// })
