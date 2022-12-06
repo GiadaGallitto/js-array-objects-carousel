@@ -30,11 +30,22 @@ const images = [
     }
 ];
 
-const divImage = document.querySelector("div.carousel-image")
 
-let carousel = document.createElement("div");
+// divImage.appendChild(carousel)
+const divCarousel = document.querySelector("div.carousel-image")
 
-carousel.classList.add("my-carousel-item");
+for (let i=0; i < images.length; i++){
+    
+    const gameElement = images[i];
 
-divImage.appendChild(carousel)
+    let divElement = document.createElement("div");
+    divElement.classList.add("my-carousel-item");
 
+    let img = document.createElement("img");
+    img.classList.add( "w-100")
+    img.src = "./" + gameElement.image;
+
+    divElement.append(img);
+    divCarousel.appendChild(divElement)
+
+}
